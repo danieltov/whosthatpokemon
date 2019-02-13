@@ -37,7 +37,20 @@ Something like:
 
 
 
-## On Keydown, Do Stuff With Event.Key
+## Winning a level
+- check if any underscores left in (.word > span).
+- if true, run game functions.
+- if no underscores left, run win functions.
+
+Something like.
+
+    for( let i = 0; i < document.querySelector(".word").childElementCount; i++ )    if document.querySelectorAll(".word > span:nth-child(i)").includes("_") === true { game functions }
+        else {
+            win functions
+        }
+
+
+## Game functions
 
 - set variable for key event, let guess = event.key
 
@@ -68,23 +81,22 @@ Something like:
         .insertAdjacentHTML("beforeend", " <strong>"+(guess)+"</strong> ")
 
 
+## Win functions
 
-## Winning a level
-- check if any underscores left in (.word > span). 
-- if true, continue game.
-- if no underscores left, win level.
+- replace Pokeball image with pokemon image. Something like
+    
+    document.querySelector(".image").innerHTML = "<img src='"+pokedex[rand].url+"' alt='"+pokeName+"'>"
 
+- play Pokemon cry. Use Howler JS library.
 Something like.
 
-    for( let i = 0; i < document.querySelector(".word").childElementCount; i++ )    if document.querySelectorAll(".word > span:nth-child(i)").includes("_") === true { continue game }
-        else {
-            winning level function
-        }
-
-- when winning a level, replace pokeball image with url @ pokedex[rand].image
-Something like. 
-
-- play pokemon cry. get url @ pokedex[rand].cry.
-Something like.
+function playCry() {
+    
+    let cry = new Howl({
+        src: pokedex[rand].cry;
+    });
+    cry.play();
+    
+}
 
 */
