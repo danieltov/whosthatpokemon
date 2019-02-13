@@ -1,756 +1,759 @@
-var pokedex = [
+let counter = 0;
+
+let pokedex = [
   {
     name: "bulbasaur",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "ivysaur",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "venusaur",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "charmander",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "charmeleon",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "charizard",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "squirtle",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "wartortle",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "blastoise",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "caterpie",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "metapod",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "butterfree",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "weedle",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "kakuna",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "beedrill",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "pidgey",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "pidgeotto",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "pidgeot",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "rattata",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "raticate",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "spearow",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "fearow",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "ekans",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "arbok",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "pikachu",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "raichu",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "sandshrew",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "sandslash",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "nidoran",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "nidorina",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "nidoqueen",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "nidoran",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "nidorino",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "nidoking",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "clefairy",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "clefable",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "vulpix",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "ninetales",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "jigglypuff",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "wigglytuff",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "zubat",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "golbat",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "oddish",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "gloom",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "vileplume",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "paras",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "parasect",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "venonat",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "venomoth",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "diglett",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "dugtrio",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "meowth",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "persian",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "psyduck",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "golduck",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "mankey",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "primeape",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "growlithe",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "arcanine",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "poliwag",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "poliwhirl",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "poliwrath",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "abra",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "kadabra",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "alakazam",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "machop",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "machoke",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "machamp",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "bellsprout",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "weepinbell",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "victreebel",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "tentacool",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "tentacruel",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "geodude",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "graveler",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "golem",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "ponyta",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "rapidash",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "slowpoke",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "slowbro",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "magnemite",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "magneton",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "farfetch'd",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "doduo",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "dodrio",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "seel",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "dewgong",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "grimer",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "muk",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "shellder",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "cloyster",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "gastly",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "haunter",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "gengar",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "onix",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "drowzee",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "hypno",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "krabby",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "kingler",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "voltorb",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "electrode",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "exeggcute",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "exeggutor",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "cubone",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "marowak",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "hitmonlee",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "hitmonchan",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "lickitung",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "koffing",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "weezing",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "rhyhorn",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "rhydon",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "chansey",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "tangela",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "kangaskhan",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "horsea",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "seadra",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "goldeen",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "seaking",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "staryu",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "starmie",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "mr. mime",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "scyther",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "jynx",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "electabuzz",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "magmar",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "pinsir",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "tauros",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "magikarp",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "gyarados",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "lapras",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "ditto",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "eevee",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "vaporeon",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "jolteon",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "flareon",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "porygon",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "omanyte",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "omastar",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "kabuto",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "kabutops",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "aerodactyl",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "snorlax",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "articuno",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "zapdos",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "moltres",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "dratini",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "dragonair",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "dragonite",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
     name: "mewtwo",
-    img: "",
-    cry: ""
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   },
   {
-    name: "mew"
-    }
+    name: "mew",
+    img: "images/pokemon" + ++counter + ".ico",
+    cry: "cries/" + counter + ".ogg"
   }
 ];

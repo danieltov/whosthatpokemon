@@ -2,17 +2,6 @@
 
 # PSUEDZ
 
-## Create Data Object
-A model of the data object (based on a names object I found on GitHub)
-
-* pokedex
-..*pokemon
-...*name
-...*number
-...*img
-...*cry 
-
-
 
 ## On Load, Randomly Set Level
 
