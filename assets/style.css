@@ -1,0 +1,7 @@
+p.wrong > span {
+  font-weight: bold;
+}
+
+div.image img {
+  max-width: 252px;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Who's That Pokémon?</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -19,17 +19,26 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Who's That Pokemon?</h1>
-      <div class="image">
-        <img src="assets/images/pokeball.png" alt="Pokeball" />
-      </div>
-      <div class="word"></div>
-      <div>
-        <p>Guesses left: <span class="guesses"></span></p>
-      </div>
-      <div class="letters">
-        <p>Not Found:</p>
+    <div class="container mt-5">
+      <h1 class="text-center">Who's That Pokemon? v0.5</h1>
+      <div class="row">
+        <div class="col text-center d-flex flex-column justify-content-center">
+          <div class="image">
+            <img src="assets/images/pokeball.png" alt="Pokeball" />
+          </div>
+          <div class="word alert alert-success display-4"></div>
+        </div>
+        <div class="col text-center d-flex flex-column justify-content-center ">
+          <div>
+            <p class="alert alert-primary">Type any letter to take a guess!</p>
+            <p class="alert alert-warning">
+              Guesses left: <span class="guesses"></span>
+            </p>
+          </div>
+          <div>
+            <p class="wrong alert alert-danger">Not Found: <span></span></p>
+          </div>
+        </div>
       </div>
     </div>
 
