@@ -2,42 +2,44 @@
 
 # TODO:
 
-
 */
 
-// # SET LEVEL
+let rand,
+  pokeName,
+  nameLen,
+  underscores,
+  guess,
+  guesses = [],
+  found = false, // start with not found
+  guessesLeft = 15,
+  score = 0;
 
-let rand = Math.floor(Math.random() * 152),
-  pokeName = pokedex[rand].name,
-  nameLen = pokeName.length,
+const init = () => {
+  setName();
+  setWord();
+  keepGoing();
+};
+
+const setName = () => {
+  rand = Math.floor(Math.random() * 152);
+  pokeName = pokedex[rand].name;
+  nameLen = pokeName.length;
   underscores = "";
-
-console.log("Name: " + pokeName);
+  console.log("Answer: " + pokeName);
+};
 
 const setWord = () => {
   for (let i = 0; i < nameLen; ++i) {
     underscores += " <span>_</span> ";
   }
   document.querySelector(".word").innerHTML = underscores;
+  document.querySelector(".word").classList.remove("alert", "alert-success");
+  document.querySelector(".word").classList.add("alert", "alert-success");
 };
-
-setWord();
-
-// # PLAY GAME!
-
-// ### set game variables
-let guess,
-  guesses = [],
-  found = false, // start with not found
-  guessesLeft = 15;
 
 // check if any underscores left in .word
 const keepGoing = () => {
   if (document.querySelector(".word").innerHTML.includes("<span>_</span>")) {
-    // if true, run game functions
-
-    // key events!
-
     document.onkeyup = function(k) {
       // if press a letter...
       if (k.which >= 65 && k.which <= 90) {
@@ -45,8 +47,12 @@ const keepGoing = () => {
         if (!guesses.includes(guess)) {
           guesses.push(guess);
           console.log(guesses);
-          --guessesLeft;
         }
+        if (
+          !pokeName.includes(guess) &&
+          !document.querySelector(".wrong>span").innerHTML.includes(guess)
+        )
+          guessesLeft--;
       }
 
       // update guesses left within span.guesses
@@ -58,7 +64,10 @@ const keepGoing = () => {
           "You Lost, You Loser!";
         document.querySelector(".row").innerHTML =
           "<div class='col'><img src='assets/images/loser.png' alt='You Lost!'></div>";
-        return;
+        setTimeout(reload, 2000);
+        function reload() {
+          location.reload();
+        }
       }
 
       let idx = 0;
@@ -93,12 +102,28 @@ const keepGoing = () => {
     };
   } else {
     // win game functions
-
+    score++;
+    document.querySelector(".score > span").innerHTML =
+      "<strong>" + score + "</strong>";
     document.querySelector(".guesses").innerHTML = "<strong> You won!</strong>";
     document.querySelector(".image").innerHTML =
       "<img src='" + pokedex[rand].img + "' alt='" + pokeName + "'>";
-    return;
+
+    // choose a new word
+    setTimeout(reset, 1250);
+    function reset() {
+      guesses = [];
+      found = false;
+      guessesLeft = 15;
+      setName();
+      setWord();
+      const img = document.querySelector(".image > img");
+      img.removeAttribute("src");
+      img.setAttribute("src", "assets/images/pokeball.png");
+      document.querySelector("span.guesses").innerHTML = guessesLeft;
+      document.querySelector(".wrong>span").innerHTML = "";
+    }
   }
 };
 
-keepGoing();
+init();
