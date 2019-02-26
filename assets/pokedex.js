@@ -412,7 +412,7 @@ let pokedex = [
     cry: "assets/cries/" + counter + ".ogg"
   },
   {
-    name: "farfetch'd",
+    name: "farfetchd",
     img: "assets/images/pokemon" + ++counter + ".ico",
     cry: "assets/cries/" + counter + ".ogg"
   },

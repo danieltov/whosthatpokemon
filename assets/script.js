@@ -1,129 +1,159 @@
 /*
 
-# TODO:
+# TODO: Store Game in Object
 
 */
 
-let rand,
-  pokeName,
-  nameLen,
-  underscores,
-  guess,
-  guesses = [],
-  found = false, // start with not found
-  guessesLeft = 15,
-  score = 0;
-
-const init = () => {
-  setName();
-  setWord();
-  keepGoing();
-};
-
-const setName = () => {
-  rand = Math.floor(Math.random() * 152);
-  pokeName = pokedex[rand].name;
-  nameLen = pokeName.length;
-  underscores = "";
-  console.log("Answer: " + pokeName);
-};
-
-const setWord = () => {
-  for (let i = 0; i < nameLen; ++i) {
-    underscores += " <span>_</span> ";
-  }
-  document.querySelector(".word").innerHTML = underscores;
-  document.querySelector(".word").classList.remove("alert", "alert-success");
-  document.querySelector(".word").classList.add("alert", "alert-success");
-};
-
-// check if any underscores left in .word
-const keepGoing = () => {
-  if (document.querySelector(".word").innerHTML.includes("<span>_</span>")) {
-    document.onkeyup = function(k) {
-      // if press a letter...
-      if (k.which >= 65 && k.which <= 90) {
-        guess = k.key;
-        if (!guesses.includes(guess)) {
-          guesses.push(guess);
-          console.log(guesses);
-        }
-        if (
-          !pokeName.includes(guess) &&
-          !document.querySelector(".wrong>span").innerHTML.includes(guess)
-        )
-          guessesLeft--;
-      }
-
-      // update guesses left within span.guesses
-      document.querySelector("span.guesses").innerHTML = guessesLeft;
-
-      // lose game functions
-      if (guessesLeft === 0) {
-        document.querySelector(".container > h1").innerHTML =
-          "You Lost, You Loser!";
-        document.querySelector(".row").innerHTML =
-          "<div class='col'><img src='assets/images/loser.png' alt='You Lost!'></div>";
-        setTimeout(reload, 2000);
-        function reload() {
-          location.reload();
-        }
-      }
-
-      let idx = 0;
-      // if guess exists in pokeName, check for multiple instances with loop. replace underscores in div.word with letter.
-      for (let i = 0; i < nameLen; i++) {
-        idx = pokeName.indexOf(guess, i);
-
-        if (idx > -1) {
-          found = true; // found it!
-          document.querySelectorAll(
-            ".word > span:nth-of-type(" + (idx + 1) + ")"
-          )[0].innerHTML = guess;
-        } else if (
-          idx === -1 && // guess not found in string after index
-          guess !== undefined && // user has guessed
-          pokeName.indexOf(guess) === -1 // guess doesn't exist in the word AT ALL
-        ) {
-          found = false; // set found to false
-        }
-      }
-      keepGoing();
-      if (
-        !found &&
-        guess !== undefined &&
-        !document.querySelector(".wrong>span").innerHTML.includes(guess) &&
-        document.querySelector(".word").innerHTML.includes("<span>_</span>")
-      ) {
-        document
-          .querySelector(".wrong>span")
-          .insertAdjacentHTML("beforeend", " " + guess + " ");
-      }
-    };
-  } else {
-    // win game functions
-    score++;
-    document.querySelector(".score > span").innerHTML =
-      "<strong>" + score + "</strong>";
-    document.querySelector(".guesses").innerHTML = "<strong> You won!</strong>";
-    document.querySelector(".image").innerHTML =
-      "<img src='" + pokedex[rand].img + "' alt='" + pokeName + "'>";
-
-    // choose a new word
-    setTimeout(reset, 1250);
-    function reset() {
-      guesses = [];
-      found = false;
-      guessesLeft = 15;
-      setName();
-      setWord();
-      const img = document.querySelector(".image > img");
-      img.removeAttribute("src");
-      img.setAttribute("src", "assets/images/pokeball.png");
-      document.querySelector("span.guesses").innerHTML = guessesLeft;
-      document.querySelector(".wrong>span").innerHTML = "";
+// create set object
+let start = {
+  rand: undefined,
+  pokeName: undefined,
+  nameLen: undefined,
+  underscores: "",
+  guess: undefined,
+  guesses: [],
+  found: false,
+  guessesLeft: 15,
+  score: 0,
+  game: function() {
+    start.setName();
+    start.setWord();
+    start.gamePlay();
+  },
+  setName: function() {
+    start.rand = Math.floor(Math.random() * 152);
+    console.log(start.rand);
+    start.pokeName = pokedex[start.rand].name;
+    start.nameLen = start.pokeName.length;
+    start.underscores = "";
+    console.log("Answer: " + start.pokeName);
+  },
+  setWord: function() {
+    start.underscores = " <span>_</span> ".repeat(start.nameLen);
+    $(".word")
+      .html(start.underscores)
+      .removeClass("alert alert-success")
+      .addClass("alert alert-success");
+  },
+  gamePlay: function() {
+    if (
+      $(".word")
+        .html()
+        .includes("_")
+    ) {
+      console.log("we still have underscores.");
+      start.keepGoing();
+    } else {
+      start.won();
     }
+  },
+  keepGoing: function() {
+    start.listen();
+  },
+  listen: function() {
+    $(window).on("keydown", function(k) {
+      if (k.which >= 65 && k.which <= 90) start.guess = k.key;
+      start.guessActions();
+    });
+  },
+  guessActions: function() {
+    if (start.guesses.includes(start.guess) === false) {
+      start.guesses.push(start.guess);
+      if (
+        start.pokeName.includes(start.guess) === false &&
+        $(".wrong>span")
+          .html()
+          .includes(start.guess) === false
+      ) {
+        start.found = false;
+        start.guessesLeft--;
+        $("span.guesses").text(start.guessesLeft);
+        start.loseCheck();
+        start.wrongGuess();
+      } else {
+        start.correctGuess();
+      }
+    }
+  },
+  loseCheck: function() {
+    if (start.guessesLeft === 0) {
+      start.lost();
+    }
+  },
+  winCheck: function() {
+    if (
+      $(".word")
+        .html()
+        .includes("_") === false
+    )
+      start.won();
+  },
+  correctGuess: function() {
+    let idx = 0;
+    for (let i = 0; i < start.nameLen; i++) {
+      idx = start.pokeName.indexOf(start.guess, i);
+
+      if (idx > -1) {
+        start.found = true; // found it!
+        $(".word>span")
+          .eq(idx)
+          .text(start.guess);
+      } else if (
+        idx === -1 && // guess not found in string more than once
+        start.guess !== undefined && // user has guessed
+        start.pokeName.indexOf(start.guess) === -1 // guess doesn't exist in the word AT ALL
+      ) {
+        start.found = false; // set found to false
+      }
+    }
+    start.winCheck();
+  },
+  wrongGuess: function() {
+    if (
+      !start.found &&
+      start.guess !== undefined &&
+      !$(".wrong>span")
+        .html()
+        .includes(start.guess) &&
+      $(".word")
+        .html()
+        .includes("<span>_</span>")
+    )
+      $(".wrong>span").append(start.guess + " ");
+  },
+  lost: function() {
+    $(".container > h1").text("You Lost, You Loser");
+    $(".row").html(
+      "<div class='col'><img src='assets/images/loser.png' alt='You Lost!'></div>"
+    );
+    setTimeout(reload, 2000);
+    function reload() {
+      location.reload();
+    }
+  },
+  won: function() {
+    start.score++;
+    $(".score > span").html("<strong>" + start.score + "</strong>");
+    $(".guesses").html("<h1> You won!</h1>");
+    $(".image").addClass("animated bounce");
+    $(".image").html(
+      "<img src='" + pokedex[start.rand].img + "' alt='" + start.pokeName + "'>"
+    );
+    setTimeout(function() {
+      start.guesses = [];
+      start.found = false;
+      start.guessesLeft = 15;
+      start.setName();
+      start.setWord();
+      $(".image")
+        .removeClass("animated bounce")
+        .children()
+        .removeAttr("src")
+        .attr("src", "assets/images/pokeball.png");
+      $("span.guesses").text(start.guessesLeft);
+      $(".wrong>span").empty();
+    }, 1750);
   }
 };
 
-init();
+start.game();
