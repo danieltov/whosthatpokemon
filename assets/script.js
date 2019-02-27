@@ -1,10 +1,3 @@
-/*
-
-# TODO: Store Game in Object
-
-*/
-
-// create set object
 let start = {
   rand: undefined,
   pokeName: undefined,
